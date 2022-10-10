@@ -1,23 +1,46 @@
 import logo from './logo.svg';
 import './App.css';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import Home from './Component/Home/Home';
+import Main from './Layout/Main';
+import ErrorPage from './Component/Error-Page/ErrorPage';
+import Topic from './Component/Topic/Topic';
+import Stastics from './Component/Stastics/Stastics';
+import Blog from './Component/Blog/Blog';
 
 function App() {
+  const router = createBrowserRouter([
+    {
+      path: '/',
+      element: <Main></Main>,
+      errorElement: <ErrorPage></ErrorPage>,
+      children: [
+        {
+          path: '/',
+          loader: async()=>{
+            return fetch('https://openapi.programming-hero.com/api/quiz')
+          },
+          element: <Home></Home>,
+        },
+        {
+          path: '/topics',
+          element: <Topic></Topic>
+        },
+        {
+          path: '/stastics',
+          element: <Stastics></Stastics>
+        },
+        {
+          path: '/blog',
+          element: <Blog></Blog>
+        }
+      ]
+    }
+
+  ])
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <RouterProvider router={router}></RouterProvider>
     </div>
   );
 }

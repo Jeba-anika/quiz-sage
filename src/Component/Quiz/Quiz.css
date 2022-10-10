@@ -1,0 +1,13 @@
+.card-size{
+    width: 14rem;
+    
+}
+.card-size img{
+    background-color: wheat;
+}
+.btn-quiz{
+    background-color: #FFDE59;
+    border: none;
+    border-radius: 10px;
+    
+}
