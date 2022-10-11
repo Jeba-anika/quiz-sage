@@ -1,0 +1,9 @@
+.question-container{
+    border: 1px solid #FFDE59;
+}
+.answer{
+    display: none;
+}
+.correct-answer{
+    display: block;
+}

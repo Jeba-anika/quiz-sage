@@ -1,0 +1,9 @@
+.selected-option{
+    background-color: brown;
+}
+.answer{
+    display: none;
+}
+.correct-answer{
+    display: block;
+}
