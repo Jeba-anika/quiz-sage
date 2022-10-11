@@ -2,10 +2,13 @@ import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 
 const EachTopicQuiz = () => {
-    const questions = useLoaderData()
+    const loadQuestions = useLoaderData();
+    const quizQuestions = loadQuestions.data;
+    console.log(quizQuestions)
+    const {id, logo, name, questions} = quizQuestions;
     return (
         <div>
-            <h2>Each topic quiz</h2>
+            <h2>Quiz For {name}</h2>
         </div>
     );
 };
