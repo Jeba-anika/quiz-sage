@@ -1,9 +1,13 @@
 .selected-option{
     background-color: brown;
 }
-.answer{
-    display: none;
+.btn-container button{
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 10px;
+    background-color: #FFDE59;
 }
-.correct-answer{
-    display: block;
+.btn-container button:hover{
+    background-color: #FFEB99;
 }

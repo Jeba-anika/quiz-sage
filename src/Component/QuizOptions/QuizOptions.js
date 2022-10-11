@@ -1,15 +1,12 @@
 import React, { useState } from 'react';
 import './QuizOptions.css'
 
-const QuizOptions = ({ option, correctAnswer ,handleChange}) => {
+const QuizOptions = ({ option, correctAnswer, handleChange, i }) => {
     // console.log(option, correctAnswer)
-    
+
     return (
-        <div>
-            <div>
-                <button onClick={()=> handleChange(option)} >{option}</button>
-            </div> 
-            
+        <div className='btn-container'>
+            <button onClick={() => handleChange(option)} >{i + 1}{option}</button>
         </div>
 
     );
