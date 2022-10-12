@@ -9,6 +9,31 @@
 .correct-answer{
     display: block;
 }
+.btn-container {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 10px;
+    background-color: #FFDE59;
+    
+}
+.btn-container:hover{
+    background-color: #FFEB99;
+}
+
+.select{
+     background-color: greenyellow;
+
+}
+.select:hover{
+    background-color: greenyellow;
+}
+.wrong{
+    background-color: red;
+}
+.wrong:hover{
+    background-color: red;
+}
 
 @media only screen and (min-width: 689px) and (max-width: 992px){
     .question-container{

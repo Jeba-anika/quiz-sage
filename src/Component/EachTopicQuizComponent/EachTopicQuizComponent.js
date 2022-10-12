@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import QuizOptions from '../QuizOptions/QuizOptions';
+
 import './EachTopicQuizComponent.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEye } from '@fortawesome/free-solid-svg-icons';
@@ -8,21 +8,25 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const EachTopicQuizComponent = ({ q, index }) => {
     const { question, options, id, correctAnswer } = q;
-    const [value, setValue] = useState(true);
-    const [message, setMessage] = useState('');
-    const [points, setPoints] = useState(0);
-    const handleChange = o => {
-        setValue(!value);
-        console.log(o)
-        if (o === correctAnswer) {
-            setMessage('correct');
-            setPoints(points + 1);
+    const [value, setValue] = useState();
+
+    const handleCheck = selected => {
+        setValue(selected);
+        if (selected === correctAnswer) {
+            toast.success('Correct Answer')
         } else {
-            setMessage('wrong');
-
+            toast.error('Wrong Answer')
         }
-
     };
+    const handleSelected = selected => {
+        if (value === selected && value === correctAnswer) {
+            return "select";
+        } else if (value === selected && selected !== correctAnswer) {
+            return "wrong";
+        } else if (selected === correctAnswer) {
+            return "select";
+        }
+    }
     const showToastMessage = () => {
         toast(correctAnswer);
     };
@@ -33,16 +37,17 @@ const EachTopicQuizComponent = ({ q, index }) => {
                 <h3>Quiz:{index + 1}. {question}</h3>
                 <div className='conatiner mt-3'>
                     <div className='row row-cols-2 gy-3'>
-                        {
-                            options.map(option => <QuizOptions key={id} option={option} correctAnswer={correctAnswer} handleChange={handleChange} i={options.indexOf(option)}></QuizOptions>)
-                        }
+                        
+                            {
+                                options.map(option => <div><button className={`btn-container ${value && handleSelected(option)}`}
+                                    onClick={() => handleCheck(option)}
+                                    key={option}
+                                    disabled={value}>{option}
+                                </button></div>)
+                            }
+                        
+
                     </div>
-                </div>
-                <div className={`answer ${message === 'correct' && `correct-answer`}`}>
-                    <p>Correct Answer</p>
-                </div>
-                <div className={`answer ${message === 'wrong' && `correct-answer`}`}>
-                    <p>Wrong Answer</p>
                 </div>
                 <div>
                     <div>
@@ -53,6 +58,7 @@ const EachTopicQuizComponent = ({ q, index }) => {
                     </div>
 
                 </div>
+
 
             </div>
 

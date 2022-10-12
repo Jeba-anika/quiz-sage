@@ -10,7 +10,7 @@ const EachTopicQuiz = () => {
     
     return (
         <div>
-            <h2>Quiz For {name}</h2>
+            <h2>Quiz For <span className='text-warning'>{name}</span></h2>
             {
                 questions.map(q => <EachTopicQuizComponent key={id} q={q} index={questions.indexOf(q)}></EachTopicQuizComponent>)
             }

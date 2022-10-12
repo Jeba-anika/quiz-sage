@@ -23,7 +23,7 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-            <div className=' container'>
+            <div className=' container mb-5'>
                 <div className='row row-cols-2 row-cols-md-2 row-cols-lg-4 ms-xl-5 ms-lg-0 ms-md-5 gy-4'>
                     {
                         quizzes.map(quiz => <Quiz key={quiz.id} quiz={quiz}></Quiz>)
