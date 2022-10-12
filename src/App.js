@@ -29,6 +29,9 @@ function App() {
         },
         {
           path: '/stastics',
+          loader: async()=>{
+            return fetch('https://openapi.programming-hero.com/api/quiz')
+          },
           element: <Stastics></Stastics>
         },
         {

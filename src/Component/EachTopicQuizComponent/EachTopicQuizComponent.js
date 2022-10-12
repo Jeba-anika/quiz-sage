@@ -37,15 +37,15 @@ const EachTopicQuizComponent = ({ q, index }) => {
                 <h3>Quiz:{index + 1}. {question}</h3>
                 <div className='conatiner mt-3'>
                     <div className='row row-cols-2 gy-3'>
-                        
-                            {
-                                options.map(option => <div><button className={`btn-container ${value && handleSelected(option)}`}
-                                    onClick={() => handleCheck(option)}
-                                    key={option}
-                                    disabled={value}>{option}
-                                </button></div>)
-                            }
-                        
+
+                        {
+                            options.map(option => <div><button className={`btn-container ${value && handleSelected(option)}`}
+                                onClick={() => handleCheck(option)}
+                                key={option}
+                                disabled={value}>{option}
+                            </button></div>)
+                        }
+
 
                     </div>
                 </div>
