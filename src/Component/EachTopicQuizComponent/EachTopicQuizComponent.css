@@ -22,14 +22,16 @@
 }
 
 .select{
-     background-color: greenyellow;
+     background-color: green;
+     color: white;
 
 }
 .select:hover{
-    background-color: greenyellow;
+    background-color: green;
 }
 .wrong{
     background-color: red;
+    color: white;
 }
 .wrong:hover{
     background-color: red;
