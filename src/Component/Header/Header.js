@@ -19,6 +19,7 @@ const Header = () => {
                             <Nav.Link as={NavLink} to='/topics'><span className='fw-bold fs-6'>Topics</span></Nav.Link>
                             <Nav.Link as={NavLink} to='/stastics'><span className='fw-bold fs-6'>Stastics</span></Nav.Link>
                             <Nav.Link as={NavLink} to='/blog'><span className='fw-bold fs-6'>Blog</span></Nav.Link>
+                            
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

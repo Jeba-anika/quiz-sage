@@ -27,7 +27,6 @@ const Stastics = () => {
                     <Tooltip />
                     <Legend />
                     <Bar dataKey="total" fill="#FFEB99" />
-                    
                 </BarChart>
             </ResponsiveContainer>
         </div>
